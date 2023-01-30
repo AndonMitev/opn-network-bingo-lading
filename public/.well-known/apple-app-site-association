@@ -1,0 +1,23 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": [
+          "9R34HVFQG2.com.opn.staging.defiwallet",
+          "9R34HVFQG2.dev.ooo.opn.wallet",
+          "9R34HVFQG2.ooo.opn.wallet"
+        ],
+        "components": [
+          {
+            "/": "/",
+            "?": {
+              "jwt": "*"
+            },
+            "comment": "Matches any URL whose path starts with / and has a query param of jwt"
+          }
+        ]
+      }
+    ]
+  }
+}
