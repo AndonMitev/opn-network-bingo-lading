@@ -72,7 +72,7 @@ function App() {
           </Link>
         </> : <Link to={appLink}>
           <p style={{ color: 'white' }}>Download for
-            <span style={{ fontWeight: 'bold', color: 'lightblue' }}>{label}</span>
+            <span style={{ fontWeight: 'bold', color: 'lightblue', marginLeft: 5 }}>{label}</span>
           </p>
         </Link>}
       </div>
