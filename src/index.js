@@ -8,11 +8,16 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { Mint } from './Mint';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+  },
+  {
+    path: "/mint",
+    element: <Mint />,
   },
 ]);
 
