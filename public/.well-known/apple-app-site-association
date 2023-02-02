@@ -10,11 +10,11 @@
         ],
         "components": [
           {
-            "/": "/",
+            "/": "/mint",
             "?": {
               "jwt": "*"
             },
-            "comment": "Matches any URL whose path starts with / and has a query param of jwt"
+            "comment": "Matches any URL whose path starts with /mint and has a query param of jwt"
           }
         ]
       }
