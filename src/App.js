@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import './App.css';
-import { Link } from "react-router-dom";
 
 import First from './assets/1.jpg';
 import Second from './assets/2.jpg';
@@ -15,36 +13,22 @@ const iOSLink = "https://apps.apple.com/bg/app/opn-me/id6444870315";
 const androidLink = "https://play.google.com/store/apps/details?id=ooo.opn.wallet&pli=1"
 
 function App() {
-  const [appLink, setAppLink] = useState("");
-  const [label, setLabel] = useState('');
+  const phone = navigator.userAgent
 
-  useEffect(() => {
-    const getMobileOS = () => {
-      const phone = navigator.userAgent
-      if (/android/i.test(phone)) {
-        setLabel('Android')
-        return 'Android'
+  let link;
 
-      } else if (/iPad|iPhone|iPod/.test(phone)) {
-        setLabel('iOS')
-        return 'iOS'
-      }
-      setLabel('Other')
-      return 'Other'
-    }
+  if (/android/i.test(phone)) {
+    link = androidLink
+  } else if (/iPad|iPhone|iPod/.test(phone)) {
+    link = iOSLink
+  }
+  if (link) {
+    document.location.href = link
+  }
 
-    const mobileOS = getMobileOS();
 
-    if (mobileOS === "iOS") {
-      setAppLink(iOSLink);
-    } else {
-      setAppLink(androidLink);
-    }
-
-  }, [])
 
   return (
-
     <div className="App" style={{ display: 'flex' }}>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', margin: 'auto' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 30 }}>
@@ -59,7 +43,7 @@ function App() {
         </div>
         <h1 style={{ color: 'white' }}>OPN Network Bingo Game</h1>
         <p style={{ width: '50%', textAlign: 'center', color: 'white' }}>Get ready for a bingo extravaganza! Introducing OPN Network Bingo, the ultimate combination of excitement and chance. Play with the classic bingo game but with a twist of OPN Network letters, which can make you win big! OPN Network Bingo is the perfect way to experience the thrill of bingo like never before. Get your cards now and join the fun! Play OPN Network Bingo today, exclusively on the OPN ME Wallet!</p>
-        {label === 'Other' ? <>
+        {/* {label === 'Other' ? <>
           <Link to={iOSLink}>
             <p style={{ color: 'white' }}>Download for
               <span style={{ fontWeight: 'bold', color: 'lightblue', marginLeft: 5 }}>iOS</span>
@@ -74,7 +58,7 @@ function App() {
           <p style={{ color: 'white' }}>Download for
             <span style={{ fontWeight: 'bold', color: 'lightblue', marginLeft: 5 }}>{label}</span>
           </p>
-        </Link>}
+        </Link>} */}
       </div>
     </div>
 
